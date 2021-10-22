@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  .container {
+    display: grid;
+    grid-template:
+      'header header header header' auto
+      'menu emails settings shortcuts' 1fr
+      'chat emails settings shortcuts' 1fr /
+      130px 1fr 150px 50px;
+  
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .header {
+    grid-area: header;
+  
+    display: grid;
+    grid-template-columns: 130px 1fr 200px;
+    padding: 5px;
+  }
+  
+  .header .left-menu,
+  .header .search-bar,
+  .header .right-menu 
+  .header .left-menu {
+    display: grid;
+    grid-template-columns: 30px 80px;
+    align-items: center;
+  }
+  
+  .header .hamburger-icon {
+    padding: 5px;
+  }
+  
+  .header .search-bar {
+    display: grid;
+    padding: 5px;
+  }
+  
+  .header .search-bar input {
+    border-radius: 7px;
+    background-color: #f0f3f4;
+    border: none;
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+  
+  .header .right-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 25px) 90px;
+    align-items: center;
+    justify-content: end;
+    grid-gap: 5px;
+    padding-right: 10px;
+  }
+  
+  .header .account-icon {
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    align-items: center;
+    grid-gap: 5px;
+    border: solid 1px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 3px;
+  
+    text-decoration: none;
+    color: black;
+  }
+  
+  .header .account-icon img {
+    border-radius: 50%;
+  }
+  
+  .menu {
+    grid-area: menu;
+    background-color: rgba(0, 255, 0, 0.3);
+  }
+  
+  .chat {
+    grid-area: chat;
+    background-color: rgba(0, 0, 255, 0.3);
+  }
+  
+  .emails {
+    grid-area: emails;
+  
+    display: grid;
+    align-content: start;
+    grid-gap: 3px;
+  }
+  
+  .emails .email {
+    display: grid;
+    grid-template-columns: 20px 20px 1fr 2fr auto;
+    align-items: center;
+    grid-gap: 5px;
+    padding: 2px 4px;
+  
+    font-weight: bold;
+  }
+  
+  .emails .email .star-section {
+    padding: 3px;
+  }
+  
+  .settings {
+    grid-area: settings;
+    background-color: rgba(255, 0, 255, 0.3);
+  }
+  
+  .shortcuts {
+    grid-area: shortcuts;
+    background-color: rgba(0, 255, 255, 0.3);
+  }
+  
+  @media screen and (max-width: 600px) {
+    .container {
+      grid-template:
+        'header header header' 40px
+        'menu emails shortcuts' 1fr
+        'chat emails shortcuts' 1fr /
+        130px 1fr 50px;
+    }
+  
+    .settings {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 450px) {
+    .container {
+      grid-template:
+        'header header' 40px
+        'menu emails' 1fr
+        'chat emails' 1fr /
+        70px 1fr;
+    }
+  
+    .shortcuts {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .container {
+      grid-template:
+        'header' 40px
+        'emails' 1fr
+        'menu' 50px /
+        1fr;
+    }
+  
+    .chat {
+      display: none;
+    }
+  }
+  
